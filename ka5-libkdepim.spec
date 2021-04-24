@@ -1,15 +1,15 @@
-%define		kdeappsver	20.12.3
+%define		kdeappsver	21.04.0
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		libkdepim
 Summary:	libkdepim
 Name:		ka5-%{kaname}
-Version:	20.12.3
+Version:	21.04.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	ede8ea4b20129c7aa20c43c78102d0c9
+# Source0-md5:	39d2ee48f53bc92d42e9da605e66a571
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5DBus-devel
@@ -92,8 +92,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kaname}_qt.lang
 %defattr(644,root,root,755)
-%attr(755,root,root) %ghost %{_libdir}/libKF5Libkdepim.so.5
-%attr(755,root,root) %{_libdir}/libKF5Libkdepim.so.5.*.*
+%ghost %{_libdir}/libKF5Libkdepim.so.5
+%attr(755,root,root) %{_libdir}/libKF5Libkdepim.so.*.*.*
 %attr(755,root,root) %{_libdir}/qt5/plugins/designer/kdepimwidgets.so
 %{_datadir}/dbus-1/interfaces/org.kde.addressbook.service.xml
 %{_datadir}/dbus-1/interfaces/org.kde.mailtransport.service.xml
@@ -107,5 +107,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/KF5/libkdepim_version.h
 %{_libdir}/cmake/KF5Libkdepim
 %{_libdir}/cmake/MailTransportDBusService
-%attr(755,root,root) %{_libdir}/libKF5Libkdepim.so
+%{_libdir}/libKF5Libkdepim.so
 %{_libdir}/qt5/mkspecs/modules/qt_Libkdepim.pri
