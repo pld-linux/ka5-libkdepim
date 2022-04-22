@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	21.12.3
+%define		kdeappsver	22.04.0
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		libkdepim
 Summary:	libkdepim
 Name:		ka5-%{kaname}
-Version:	21.12.3
-Release:	2
+Version:	22.04.0
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	b7d4099322f1ddef785241980a1ce1e9
+# Source0-md5:	36f4b12b796c448695b1beb31f7a42f7
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5DBus-devel
@@ -115,8 +115,6 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %{_includedir}/KF5/Libkdepim
-%{_includedir}/KF5/libkdepim
-%{_includedir}/KF5/libkdepim_version.h
 %{_libdir}/cmake/KF5Libkdepim
 %{_libdir}/cmake/MailTransportDBusService
 %{_libdir}/libKF5Libkdepim.so
