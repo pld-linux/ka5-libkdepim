@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	22.12.3
+%define		kdeappsver	23.04.0
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		libkdepim
 Summary:	libkdepim
 Name:		ka5-%{kaname}
-Version:	22.12.3
-Release:	3
+Version:	23.04.0
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	0f43694f9c98d79ec55f164d077d11ad
+# Source0-md5:	452d24669b0c1597fc29e93b61bf611a
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5DBus-devel
@@ -104,18 +104,20 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kaname}_qt.lang
 %defattr(644,root,root,755)
-%ghost %{_libdir}/libKF5Libkdepim.so.5
-%attr(755,root,root) %{_libdir}/libKF5Libkdepim.so.*.*.*
-%attr(755,root,root) %{_libdir}/qt5/plugins/designer/kdepimwidgets.so
 %{_datadir}/dbus-1/interfaces/org.kde.addressbook.service.xml
 %{_datadir}/dbus-1/interfaces/org.kde.mailtransport.service.xml
 %{_datadir}/qlogging-categories5/libkdepim.categories
 %{_datadir}/qlogging-categories5/libkdepim.renamecategories
+%ghost %{_libdir}/libKPim5Libkdepim.so.5
+%attr(755,root,root) %{_libdir}/libKPim5Libkdepim.so.*.*.*
+%attr(755,root,root) %{_libdir}/qt5/plugins/designer/kdepim5widgets.so
 
 %files devel
 %defattr(644,root,root,755)
-%{_includedir}/KF5/Libkdepim
-%{_libdir}/cmake/KF5Libkdepim
-%{_libdir}/cmake/MailTransportDBusService
-%{_libdir}/libKF5Libkdepim.so
 %{_libdir}/qt5/mkspecs/modules/qt_Libkdepim.pri
+%{_includedir}/KPim5/Libkdepim
+%{_libdir}/cmake/KF5Libkdepim
+%{_libdir}/cmake/KPim5Libkdepim
+%{_libdir}/cmake/KPim5MailTransportDBusService
+%{_libdir}/cmake/MailTransportDBusService
+%{_libdir}/libKPim5Libkdepim.so
